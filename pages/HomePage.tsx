@@ -237,13 +237,13 @@ const HomePage: React.FC = () => {
             <BenefitCard
               icon={<svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><circle cx="12" cy="8" r="4"/><path strokeLinecap="round" strokeLinejoin="round" d="M8 12l-2 6 6-3 6 3-2-6"/><path strokeLinecap="round" strokeLinejoin="round" d="M9 2h6l-3 4-3-4z"/></svg>}
               title="2nd Rank"
-              description="Bottle + Cup"
+              description="Bottle + Cup + Certificate"
               onClick={() => openModal('reward2')}
             />
             <BenefitCard
               icon={<svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-amber-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><circle cx="12" cy="8" r="4"/><path strokeLinecap="round" strokeLinejoin="round" d="M8 12l-2 6 6-3 6 3-2-6"/><path strokeLinecap="round" strokeLinejoin="round" d="M9 2h6l-3 4-3-4z"/></svg>}
               title="3rd Rank"
-              description="Bottle + Pen"
+              description="Bottle + Pen + Certificate"
               onClick={() => openModal('reward3')}
             />
           </div>
@@ -251,7 +251,7 @@ const HomePage: React.FC = () => {
           <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="bg-white rounded-xl shadow-lg p-6 border border-gold">
               <h4 className="text-xl font-bold text-dark-teal">Top 15 Performers</h4>
-              <p className="text-gray-700 mt-2">Top 15 ambassadors get a Certificate + Pen.</p>
+              <p className="text-gray-700 mt-2">Top 15 ambassadors get a Certificate.</p>
             </div>
             <div className="bg-white rounded-xl shadow-lg p-6 border border-gold">
               <h4 className="text-xl font-bold text-dark-teal">How Winners Are Selected</h4>
