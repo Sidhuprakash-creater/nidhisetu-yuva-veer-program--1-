@@ -128,6 +128,12 @@ const HomePage: React.FC = () => {
       {/* Hero Section */}
       <section className="bg-dark-teal text-white relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 py-16 md:py-32 text-center relative z-10">
+          <img
+            src="/assets/cropped_circle_image.png"
+            alt="NidhiSetu"
+            className="mx-auto mb-4 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full shadow-md object-cover"
+            onError={(e) => { (e.currentTarget as HTMLImageElement).src = 'https://picsum.photos/seed/nidhisetu/200/200'; }}
+          />
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
             NidhiSetu <span className="text-gold">Yuva Veer</span> Program
           </h1>
