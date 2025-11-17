@@ -30,6 +30,12 @@ const Header: React.FC = () => {
         <nav className="flex items-center space-x-2">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/register">Register</NavLink>
+          <Link
+            to="/admin-login"
+            className="ml-2 px-4 py-2 rounded-md bg-gold text-dark-teal text-sm font-semibold hover:bg-yellow-400 transition-colors duration-300 hover:-translate-y-0.5 transition-transform"
+          >
+            Admin Login
+          </Link>
         </nav>
       </div>
     </header>

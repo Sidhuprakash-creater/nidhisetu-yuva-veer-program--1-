@@ -5,6 +5,8 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import RegistrationPage from './pages/RegistrationPage';
+import AdminLogin from './pages/AdminLogin';
+import AdminPanel from './pages/AdminPanel';
 
 const App: React.FC = () => {
   return (
@@ -15,6 +17,8 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/register" element={<RegistrationPage />} />
+            <Route path="/admin-login" element={<AdminLogin />} />
+            <Route path="/admin" element={<AdminPanel />} />
           </Routes>
         </main>
         <Footer />

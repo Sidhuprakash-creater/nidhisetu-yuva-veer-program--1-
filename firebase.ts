@@ -1,6 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { getFirestore, collection, addDoc, getDocs, query, orderBy } from "firebase/firestore";
+import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
 
 // Your web app's Firebase configuration from your project
@@ -17,6 +18,8 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const auth = getAuth(app);
+const REQUIRED_ADMIN_EMAIL = "nidhisetusaving@gmail.com";
 const analytics = getAnalytics(app);
 
 // Function to add a new ambassador document to the 'ambassadors' collection
@@ -32,4 +35,26 @@ const addAmbassador = async (data: object) => {
   }
 };
 
-export { db, addAmbassador };
+const getAmbassadors = async () => {
+  try {
+    const q = query(collection(db, "ambassadors"), orderBy("submittedAt", "desc"));
+    const snapshot = await getDocs(q);
+    return snapshot.docs.map((d) => ({ id: d.id, ...d.data() }));
+  } catch (e) {
+    const snapshot = await getDocs(collection(db, "ambassadors"));
+    return snapshot.docs.map((d) => ({ id: d.id, ...d.data() }));
+  }
+};
+
+const signInAdmin = async (email: string, password: string) => {
+  const cred = await signInWithEmailAndPassword(auth, email, password);
+  return cred.user;
+};
+
+const signOutAdmin = async () => {
+  await signOut(auth);
+};
+
+const isAdmin = () => auth.currentUser?.email === REQUIRED_ADMIN_EMAIL;
+
+export { db, addAmbassador, getAmbassadors, auth, signInAdmin, signOutAdmin, isAdmin, REQUIRED_ADMIN_EMAIL };
