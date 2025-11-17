@@ -32,7 +32,7 @@ const HomePage: React.FC = () => {
   const [modalChildren, setModalChildren] = useState<React.ReactNode>(null);
   const [modalCompact, setModalCompact] = useState(false);
 
-  const openModal = (type: 'cert' | 'skills' | 'exclusive' | 'reward1' | 'reward2' | 'reward3') => {
+  const openModal = (type: 'cert' | 'skills' | 'exclusive' | 'networking' | 'reward1' | 'reward2' | 'reward3') => {
     if (type === 'skills') {
       setModalCompact(false);
       setModalTitle('Boost Your Career-Ready Skills 🎯');
@@ -104,6 +104,16 @@ const HomePage: React.FC = () => {
             onError={(e) => { (e.currentTarget as HTMLImageElement).src = 'https://picsum.photos/seed/reward3/600/400'; }}
           />
           <p className="text-sm">This isn’t just a reward — it’s a heartfelt gift from the NidhiSetu family to you💫.</p>
+        </div>
+      );
+    } else if (type === 'networking') {
+      setModalCompact(false);
+      setModalTitle('Professional & Clear');
+      setModalChildren(
+        <div>
+          <h4 className="font-semibold">🌐 Build Powerful Connections</h4>
+          <p className="mt-2 text-sm">Become part of a strong NidhiSetu community!</p>
+          <p className="mt-1 text-sm">Connect with like-minded students, ambassadors, mentors, and industry professionals who can help you grow.</p>
         </div>
       );
     } else {
@@ -191,7 +201,7 @@ const HomePage: React.FC = () => {
                 icon={benefit.icon}
                 title={benefit.title}
                 description={benefit.description}
-                onClick={() => openModal(index === 2 ? 'skills' : index === 3 ? 'exclusive' : 'cert')}
+                onClick={() => openModal(index === 1 ? 'networking' : index === 2 ? 'skills' : index === 3 ? 'exclusive' : 'cert')}
               />
             ))}
           </div>
