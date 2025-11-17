@@ -53,14 +53,14 @@ const Header: React.FC = () => {
       </div>
       {open && (
         <>
-          <div className="absolute left-0 right-0 top-full md:hidden bg-dark-teal/95 border-t border-gold/30">
+          <div className="absolute left-0 right-0 top-full md:hidden bg-dark-teal/95 border-t border-gold/30 z-50">
             <div className="container mx-auto px-4 py-3 space-y-2">
               <Link to="/" onClick={() => setOpen(false)} className="block px-4 py-3 rounded-md text-base text-white hover:bg-gold/10 hover:text-gold">Home</Link>
               <Link to="/register" onClick={() => setOpen(false)} className="block px-4 py-3 rounded-md text-base text-white hover:bg-gold/10 hover:text-gold">Register</Link>
               <Link to="/admin-login" onClick={() => setOpen(false)} className="block px-4 py-3 rounded-md text-base bg-gold text-dark-teal font-semibold hover:bg-yellow-400">Admin Login</Link>
             </div>
           </div>
-          <button aria-label="Close menu overlay" onClick={() => setOpen(false)} className="md:hidden fixed inset-0 bg-black/30"></button>
+          <button aria-label="Close menu overlay" onClick={() => setOpen(false)} className="md:hidden fixed inset-0 bg-black/30 z-40"></button>
         </>
       )}
     </header>
