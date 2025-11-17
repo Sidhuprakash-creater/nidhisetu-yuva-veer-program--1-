@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import SuccessModal from '../components/SuccessModal';
-import { addAmbassador } from '../firebase';
+import { addAmbassador, checkAmbassadorExists } from '../firebase';
 
 interface FormData {
   fullName: string;
@@ -37,6 +37,7 @@ const RegistrationPage: React.FC = () => {
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [globalError, setGlobalError] = useState('');
   const termsItems = [
     { title: 'Active Participation', text: 'Ambassadors must actively share NidhiSetu updates, information, and awareness among students.' },
     { title: 'Genuine Promotions Only', text: 'Only real interactions and genuine promotions are allowed. Any false or misleading activity may lead to removal from the program.' },
@@ -94,6 +95,19 @@ const RegistrationPage: React.FC = () => {
     if (Object.keys(validationErrors).length === 0) {
       setIsSubmitting(true);
       try {
+        try {
+          const dup = await checkAmbassadorExists(formData.email, formData.phone);
+          if (dup.emailExists || dup.phoneExists) {
+            setErrors(prev => ({
+              ...prev,
+              email: dup.emailExists ? 'This email is already registered.' : prev.email,
+              phone: dup.phoneExists ? 'This mobile number is already registered.' : prev.phone,
+            }));
+            return;
+          }
+        } catch (readErr: any) {
+          // If rules block reads, skip duplicate check and proceed with submission
+        }
         await addAmbassador({
             ...formData,
             age: Number(formData.age),
@@ -106,9 +120,14 @@ const RegistrationPage: React.FC = () => {
             fullName: '', age: '', email: '', phone: '', college: '', city: '', reason: ''
         });
         setTermsChecked(Array(termsItems.length).fill(false));
-      } catch (error) {
+      } catch (error: any) {
           console.error("Failed to submit application:", error);
-          alert("There was an error submitting your application. Please check the console and try again.");
+          const code = error?.code ?? '';
+          if (code.includes('unavailable') || code.includes('permission-denied')) {
+            setGlobalError('Service is unavailable right now. Please try again later.');
+          } else {
+            setGlobalError('Something went wrong. Please try again.');
+          }
       } finally {
         setIsSubmitting(false);
       }
@@ -127,6 +146,11 @@ const RegistrationPage: React.FC = () => {
                 <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-dark-teal text-center">Ambassador Registration</h1>
                 <p className="text-gray-600 mt-2 text-center">Join our mission to spread financial literacy.</p>
                 <div className="mt-10 bg-gray-50 p-4 sm:p-8 rounded-2xl shadow-lg">
+                    {globalError && (
+                      <div className="mb-4 p-3 rounded-md bg-red-50 border border-red-300 text-red-700 text-sm">
+                        {globalError}
+                      </div>
+                    )}
                     <form onSubmit={handleSubmit} noValidate>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {/* Full Name */}

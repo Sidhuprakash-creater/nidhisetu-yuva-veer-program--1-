@@ -37,7 +37,12 @@ const AdminPanel: React.FC = () => {
       setRows(data as Amb[]);
       setError('');
     } catch (e: any) {
-      setError(e?.message || 'Failed to load data');
+      const code = e?.code ?? '';
+      if (code.includes('unavailable') || code.includes('permission-denied')) {
+        setError('Service is unavailable. Please check Firebase rules or try again later.');
+      } else {
+        setError(e?.message || 'Failed to load data');
+      }
     } finally {
       setLoading(false);
     }

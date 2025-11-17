@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, getDocs, query, orderBy } from "firebase/firestore";
+import { getFirestore, collection, addDoc, getDocs, query, orderBy, where, limit } from "firebase/firestore";
 import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
 
@@ -46,6 +46,22 @@ const getAmbassadors = async () => {
   }
 };
 
+const checkAmbassadorExists = async (email?: string, phone?: string) => {
+  let emailExists = false;
+  let phoneExists = false;
+  if (email) {
+    const qEmail = query(collection(db, "ambassadors"), where("email", "==", email), limit(1));
+    const snapEmail = await getDocs(qEmail);
+    emailExists = !snapEmail.empty;
+  }
+  if (phone) {
+    const qPhone = query(collection(db, "ambassadors"), where("phone", "==", phone), limit(1));
+    const snapPhone = await getDocs(qPhone);
+    phoneExists = !snapPhone.empty;
+  }
+  return { emailExists, phoneExists };
+};
+
 const signInAdmin = async (email: string, password: string) => {
   const cred = await signInWithEmailAndPassword(auth, email, password);
   return cred.user;
@@ -57,4 +73,4 @@ const signOutAdmin = async () => {
 
 const isAdmin = () => auth.currentUser?.email === REQUIRED_ADMIN_EMAIL;
 
-export { db, addAmbassador, getAmbassadors, auth, signInAdmin, signOutAdmin, isAdmin, REQUIRED_ADMIN_EMAIL };
+export { db, addAmbassador, getAmbassadors, auth, signInAdmin, signOutAdmin, isAdmin, REQUIRED_ADMIN_EMAIL, checkAmbassadorExists };
