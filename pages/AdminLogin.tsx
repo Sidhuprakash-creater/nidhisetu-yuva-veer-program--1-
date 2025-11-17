@@ -28,17 +28,21 @@ const AdminLogin: React.FC = () => {
             <div>
               <label className="block text-sm font-medium text-gray-700">Username</label>
               <input
-                type="text"
+                type="email"
+                autoComplete="username"
+                aria-label="Admin email"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 placeholder={REQUIRED_ADMIN_EMAIL}
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-gold focus:border-gold"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-gold focus:border-gold placeholder-gray-500"
               />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700">Password</label>
               <input
                 type="password"
+                autoComplete="current-password"
+                aria-label="Admin password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-gold focus:border-gold"
