@@ -167,13 +167,13 @@ const HomePage: React.FC = () => {
       {/* Banner Images */}
       <section className="bg-gray-100 py-16">
           <div className="container mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 justify-items-center">
-              <div className="relative w-32 sm:w-48 md:w-64 h-32 sm:h-52 md:h-64 bg-camel rounded-lg shadow-md p-2 cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(193,154,107,0.45)] hover:ring-1 hover:ring-camel hover:ring-offset-2 hover:ring-offset-white" onClick={() => openModal('cert')} role="button" tabIndex={0}>
+              <div className="relative w-32 sm:w-48 md:w-64 h-32 sm:h-52 md:h-64 bg-camel rounded-lg shadow-md p-2 cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(193,154,107,0.45)] hover:ring-1 hover:ring-camel hover:ring-offset-2 hover:ring-offset-white">
                   <img src="/assets/yuva-veer.png" alt="NidhiSetu Yuva Veer" className="absolute inset-0 w-full h-full object-contain object-center" onError={(e) => { (e.currentTarget as HTMLImageElement).src = 'https://picsum.photos/seed/finance1/600/400'; }}/>
               </div>
-              <div className="relative w-32 sm:w-48 md:w-64 h-32 sm:h-52 md:h-64 bg-camel rounded-lg shadow-md overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(193,154,107,0.45)] hover:ring-1 hover:ring-camel hover:ring-offset-2 hover:ring-offset-white" onClick={() => openModal('cert')} role="button" tabIndex={0}>
+              <div className="relative w-32 sm:w-48 md:w-64 h-32 sm:h-52 md:h-64 bg-camel rounded-lg shadow-md overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(193,154,107,0.45)] hover:ring-1 hover:ring-camel hover:ring-offset-2 hover:ring-offset-white">
                   <img src="/assets/yuva-veer2.png" alt="NidhiSetu Yuva Veer 2" className="absolute inset-0 w-full h-full object-contain object-center" onError={(e) => { (e.currentTarget as HTMLImageElement).src = 'https://picsum.photos/seed/community2/600/400'; }}/>
               </div>
-              <div className="relative w-32 sm:w-48 md:w-64 h-32 sm:h-52 md:h-64 bg-camel rounded-lg shadow-md overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(193,154,107,0.45)] hover:ring-1 hover:ring-camel hover:ring-offset-2 hover:ring-offset-white" onClick={() => openModal('cert')} role="button" tabIndex={0}>
+              <div className="relative w-32 sm:w-48 md:w-64 h-32 sm:h-52 md:h-64 bg-camel rounded-lg shadow-md overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(193,154,107,0.45)] hover:ring-1 hover:ring-camel hover:ring-offset-2 hover:ring-offset-white">
                   <img src="/assets/yuva-veer3.png" alt="NidhiSetu Yuva Veer 3" className="absolute inset-0 w-full h-full object-contain object-center" onError={(e) => { (e.currentTarget as HTMLImageElement).src = 'https://picsum.photos/seed/leadership3/600/400'; }}/>
               </div>
           </div>
