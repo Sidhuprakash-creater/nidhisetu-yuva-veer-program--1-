@@ -4,17 +4,17 @@ import React from 'react';
 const Footer: React.FC = () => {
   return (
     <footer className="bg-dark-teal text-white">
-      <div className="container mx-auto px-6 py-8 text-center">
+      <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8 text-center">
         <p className="text-lg font-semibold">NidhiSetu Yuva Veer Program</p>
         <p className="mt-2 text-gray-300">
           Contact us at: <a href="mailto:nidhisetusaving@gmail.com?subject=Yuva%20Veer%20Program%20Inquiry&body=Hi%20NidhiSetu%20Team,%0D%0A%0D%0AI%20would%20like%20to%20know%20more%20about%20the%20Yuva%20Veer%20Program.%0D%0A%0D%0ARegards,%0D%0A" className="text-gold hover:underline">nidhisetusaving@gmail.com</a>
         </p>
-        <div className="mt-6 flex items-center justify-center space-x-3">
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
           <a
             href="https://www.linkedin.com/company/nidhisetu/?viewAsMember=true"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 rounded-md border border-gold text-gold font-semibold transition-colors duration-300 hover:bg-gold hover:text-dark-teal hover:shadow-lg hover:-translate-y-0.5 transition-transform"
+            className="px-3 sm:px-4 py-2 rounded-md border border-gold text-gold font-semibold text-sm sm:text-base transition-colors duration-300 hover:bg-gold hover:text-dark-teal hover:shadow-lg hover:-translate-y-0.5 transition-transform"
             aria-label="LinkedIn"
           >
             <span className="inline-flex items-center">
@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
             href="https://www.instagram.com/nidhi_setu?igsh=dHZsczBqMnR2Y2d0"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 rounded-md border border-gold text-gold font-semibold transition-colors duration-300 hover:bg-gold hover:text-dark-teal hover:shadow-lg hover:-translate-y-0.5 transition-transform"
+            className="px-3 sm:px-4 py-2 rounded-md border border-gold text-gold font-semibold text-sm sm:text-base transition-colors duration-300 hover:bg-gold hover:text-dark-teal hover:shadow-lg hover:-translate-y-0.5 transition-transform"
             aria-label="Instagram"
           >
             <span className="inline-flex items-center">
@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
             href="https://www.facebook.com/share/1DB65U9owK/"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 rounded-md border border-gold text-gold font-semibold transition-colors duration-300 hover:bg-gold hover:text-dark-teal hover:shadow-lg hover:-translate-y-0.5 transition-transform"
+            className="px-3 sm:px-4 py-2 rounded-md border border-gold text-gold font-semibold text-sm sm:text-base transition-colors duration-300 hover:bg-gold hover:text-dark-teal hover:shadow-lg hover:-translate-y-0.5 transition-transform"
             aria-label="Facebook"
           >
             <span className="inline-flex items-center">
@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
             href="https://whatsapp.com/channel/0029Vb6vqi50G0XmAso9Vu2y"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 rounded-md border border-gold text-gold font-semibold transition-colors duration-300 hover:bg-gold hover:text-dark-teal hover:shadow-lg hover:-translate-y-0.5 transition-transform"
+            className="px-3 sm:px-4 py-2 rounded-md border border-gold text-gold font-semibold text-sm sm:text-base transition-colors duration-300 hover:bg-gold hover:text-dark-teal hover:shadow-lg hover:-translate-y-0.5 transition-transform"
             aria-label="WhatsApp"
           >
             <span className="inline-flex items-center">

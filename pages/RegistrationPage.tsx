@@ -122,11 +122,11 @@ const RegistrationPage: React.FC = () => {
   return (
     <>
         <div className="bg-white py-12 md:py-20">
-            <div className="container mx-auto px-6">
+            <div className="container mx-auto px-4 sm:px-6">
                 <div className="max-w-3xl mx-auto">
-                <h1 className="text-3xl md:text-4xl font-bold text-dark-teal text-center">Ambassador Registration</h1>
+                <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-dark-teal text-center">Ambassador Registration</h1>
                 <p className="text-gray-600 mt-2 text-center">Join our mission to spread financial literacy.</p>
-                <div className="mt-10 bg-gray-50 p-8 rounded-2xl shadow-lg">
+                <div className="mt-10 bg-gray-50 p-4 sm:p-8 rounded-2xl shadow-lg">
                     <form onSubmit={handleSubmit} noValidate>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {/* Full Name */}

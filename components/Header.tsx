@@ -23,7 +23,7 @@ const NavLink: React.FC<{ to: string; children: React.ReactNode }> = ({ to, chil
 const Header: React.FC = () => {
   return (
     <header className="bg-dark-teal shadow-md sticky top-0 z-50">
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
         <Link to="/" className="text-2xl font-bold text-white tracking-wider">
           Nidhi<span className="text-gold">Setu</span>
         </Link>

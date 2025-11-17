@@ -5,10 +5,10 @@ import { CheckCircleIcon, UserGroupIcon, LightBulbIcon, StarIcon } from '../comp
 import SuccessModal from '../components/SuccessModal';
 
 const BenefitCard: React.FC<{ icon: React.ReactNode; title: string; description: string; onClick?: () => void }> = ({ icon, title, description, onClick }) => (
-  <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-[0_0_25px_6px_rgba(212,175,55,0.35)] hover:ring-1 hover:ring-gold hover:ring-offset-2 hover:ring-offset-white hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 transition-shadow flex flex-col items-center text-center cursor-pointer" onClick={onClick} role="button" tabIndex={0}>
-    <div className="text-gold mb-4">{icon}</div>
-    <h3 className="text-lg font-bold text-dark-teal mb-2">{title}</h3>
-    <p className="text-gray-600 text-sm">{description}</p>
+  <div className="bg-white p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-[0_0_25px_6px_rgba(212,175,55,0.35)] hover:ring-1 hover:ring-gold hover:ring-offset-2 hover:ring-offset-white hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 transition-shadow flex flex-col items-center text-center cursor-pointer" onClick={onClick} role="button" tabIndex={0}>
+    <div className="text-gold mb-3 sm:mb-4">{icon}</div>
+    <h3 className="text-base sm:text-lg font-bold text-dark-teal mb-2">{title}</h3>
+    <p className="text-sm sm:text-base text-gray-600">{description}</p>
   </div>
 );
 
@@ -127,8 +127,8 @@ const HomePage: React.FC = () => {
     <div>
       {/* Hero Section */}
       <section className="bg-dark-teal text-white relative overflow-hidden">
-        <div className="container mx-auto px-6 py-20 md:py-32 text-center relative z-10">
-          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
+        <div className="container mx-auto px-4 sm:px-6 py-16 md:py-32 text-center relative z-10">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
             NidhiSetu <span className="text-gold">Yuva Veer</span> Program
           </h1>
           <p className="mt-4 text-lg md:text-2xl text-gray-200 max-w-3xl mx-auto">
@@ -136,7 +136,7 @@ const HomePage: React.FC = () => {
           </p>
           <Link
             to="/register"
-            className="mt-8 inline-block bg-gold text-dark-teal font-bold py-3 px-8 rounded-full text-lg hover:bg-yellow-400 transition-colors duration-300 shadow-lg hover:-translate-y-0.5 hover:shadow-[0_0_25px_rgba(212,175,55,0.5)] transition-transform"
+            className="mt-8 inline-block bg-gold text-dark-teal font-bold py-3 px-8 rounded-full text-base sm:text-lg hover:bg-yellow-400 transition-colors duration-300 shadow-lg hover:-translate-y-0.5 hover:shadow-[0_0_25px_rgba(212,175,55,0.5)] transition-transform w-full sm:w-auto"
           >
             Join Now
           </Link>
@@ -149,7 +149,7 @@ const HomePage: React.FC = () => {
 
       {/* Program Overview */}
       <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-6 text-center">
+        <div className="container mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl font-bold text-dark-teal">Program Overview</h2>
           <div className="w-24 h-1 bg-gold mx-auto mt-4 mb-8"></div>
           <p className="max-w-3xl mx-auto text-gray-700 leading-relaxed">
@@ -160,14 +160,14 @@ const HomePage: React.FC = () => {
       
       {/* Banner Images */}
       <section className="bg-gray-100 py-16">
-          <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center">
-              <div className="relative w-56 md:w-64 h-64 bg-camel rounded-lg shadow-md p-2 cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(193,154,107,0.45)] hover:ring-1 hover:ring-camel hover:ring-offset-2 hover:ring-offset-white" onClick={() => openModal('cert')} role="button" tabIndex={0}>
+          <div className="container mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 justify-items-center">
+              <div className="relative w-32 sm:w-48 md:w-64 h-32 sm:h-52 md:h-64 bg-camel rounded-lg shadow-md p-2 cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(193,154,107,0.45)] hover:ring-1 hover:ring-camel hover:ring-offset-2 hover:ring-offset-white" onClick={() => openModal('cert')} role="button" tabIndex={0}>
                   <img src="/assets/yuva-veer.png" alt="NidhiSetu Yuva Veer" className="absolute inset-0 w-full h-full object-contain object-center" onError={(e) => { (e.currentTarget as HTMLImageElement).src = 'https://picsum.photos/seed/finance1/600/400'; }}/>
               </div>
-              <div className="relative w-56 md:w-64 h-64 bg-camel rounded-lg shadow-md overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(193,154,107,0.45)] hover:ring-1 hover:ring-camel hover:ring-offset-2 hover:ring-offset-white" onClick={() => openModal('cert')} role="button" tabIndex={0}>
+              <div className="relative w-32 sm:w-48 md:w-64 h-32 sm:h-52 md:h-64 bg-camel rounded-lg shadow-md overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(193,154,107,0.45)] hover:ring-1 hover:ring-camel hover:ring-offset-2 hover:ring-offset-white" onClick={() => openModal('cert')} role="button" tabIndex={0}>
                   <img src="/assets/yuva-veer2.png" alt="NidhiSetu Yuva Veer 2" className="absolute inset-0 w-full h-full object-contain object-center" onError={(e) => { (e.currentTarget as HTMLImageElement).src = 'https://picsum.photos/seed/community2/600/400'; }}/>
               </div>
-              <div className="relative w-56 md:w-64 h-64 bg-camel rounded-lg shadow-md overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(193,154,107,0.45)] hover:ring-1 hover:ring-camel hover:ring-offset-2 hover:ring-offset-white" onClick={() => openModal('cert')} role="button" tabIndex={0}>
+              <div className="relative w-32 sm:w-48 md:w-64 h-32 sm:h-52 md:h-64 bg-camel rounded-lg shadow-md overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(193,154,107,0.45)] hover:ring-1 hover:ring-camel hover:ring-offset-2 hover:ring-offset-white" onClick={() => openModal('cert')} role="button" tabIndex={0}>
                   <img src="/assets/yuva-veer3.png" alt="NidhiSetu Yuva Veer 3" className="absolute inset-0 w-full h-full object-contain object-center" onError={(e) => { (e.currentTarget as HTMLImageElement).src = 'https://picsum.photos/seed/leadership3/600/400'; }}/>
               </div>
           </div>
@@ -175,8 +175,8 @@ const HomePage: React.FC = () => {
 
       {/* Benefits Section */}
       <section className="py-16 md:py-24">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-dark-teal text-center">Program Benefits</h2>
+        <div className="container mx-auto px-4 sm:px-6">
+          <h2 className="text-2xl sm:text-3xl font-bold text-dark-teal text-center">Program Benefits</h2>
           <div className="w-24 h-1 bg-gold mx-auto mt-4 mb-12"></div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
@@ -194,30 +194,30 @@ const HomePage: React.FC = () => {
 
       {/* Ambassador Responsibilities & Rewards */}
       <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-dark-teal text-center">Ambassador Responsibilities & Rewards</h2>
+        <div className="container mx-auto px-4 sm:px-6">
+          <h2 className="text-2xl sm:text-3xl font-bold text-dark-teal text-center">Ambassador Responsibilities & Rewards</h2>
           <div className="w-24 h-1 bg-gold mx-auto mt-4 mb-6"></div>
           <p className="text-center text-gray-700 max-w-3xl mx-auto">Understand your monthly tasks and see how NidhiSetu rewards top ambassadors every month.</p>
 
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <BenefitCard
-              icon={<svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M7 8h6m-6 4h4M5 19l-2 2 2-6a8 8 0 1114-6 8 8 0 01-8 8c-1.4 0-2.7-.3-3.9-.8"/></svg>}
+              icon={<svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 sm:w-10 sm:h-10 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M7 8h6m-6 4h4M5 19l-2 2 2-6a8 8 0 1114-6 8 8 0 01-8 8c-1.4 0-2.7-.3-3.9-.8"/></svg>}
               title="Student Interaction"
               description="Talk to students about NidhiSetu, explain saving habits, and introduce app benefits."
             />
             <BenefitCard
-              icon={<svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M7 8l10-5v14l-10-5v6l-4-2V4l4-2v6z"/></svg>}
+              icon={<svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 sm:w-10 sm:h-10 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M7 8l10-5v14l-10-5v6l-4-2V4l4-2v6z"/></svg>}
               title="Share App Updates"
               description="Share new features and app updates with your college friends and community."
             />
             <BenefitCard
-              icon={<div className="flex items-center"><svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-gold mr-2"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm6.5-.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-gold"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg></div>}
+              icon={<div className="flex items-center"><svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 sm:w-6 sm:h-6 text-gold mr-2"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm6.5-.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 sm:w-6 sm:h-6 text-gold"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg></div>}
               title="Social Media Promotion"
               description="Promote NidhiSetu on Instagram & Facebook. No proof upload required."
             />
           </div>
 
-          <h3 className="mt-16 text-2xl font-bold text-dark-teal text-center">Monthly Rewards & Recognition</h3>
+          <h3 className="mt-16 text-xl sm:text-2xl font-bold text-dark-teal text-center">Monthly Rewards & Recognition</h3>
           <p className="text-center text-gray-700 mt-2 max-w-3xl mx-auto">Every month, top ambassadors are selected based on activity, awareness, and consistency.</p>
           <div className="w-24 h-1 bg-gold mx-auto mt-4 mb-10"></div>
 
@@ -257,7 +257,7 @@ const HomePage: React.FC = () => {
 
       {/* Eligibility Section */}
       <section className="bg-dark-teal text-white py-16 md:py-24">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <h2 className="text-3xl font-bold text-center">Who Can Apply?</h2>
           <div className="w-24 h-1 bg-gold mx-auto mt-4 mb-12"></div>
           <div className="max-w-2xl mx-auto bg-white/10 p-8 rounded-xl backdrop-blur-sm">
