@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+/* Base styles */
+html, body { height: 100%; }
+@theme {
+  --color-dark-teal: #0d4d56;
+  --color-gold: #d4af37;
+  --color-camel: #C19A6B;
+  --font-sans: Inter, sans-serif;
+}
+
+body { font-family: var(--font-sans); }

@@ -2,7 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc, getDocs, query, orderBy, where, limit } from "firebase/firestore";
 import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
-import { getAnalytics } from "firebase/analytics";
+ 
 
 // Your web app's Firebase configuration from your project
 const firebaseConfig = {
@@ -20,7 +20,12 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 const REQUIRED_ADMIN_EMAIL = "nidhisetusaving@gmail.com";
-const analytics = getAnalytics(app);
+let analytics: unknown;
+if (typeof window !== 'undefined' && import.meta.env.PROD) {
+  import('firebase/analytics').then(({ getAnalytics }) => {
+    try { analytics = getAnalytics(app); } catch {}
+  }).catch(() => {});
+}
 
 // Function to add a new ambassador document to the 'ambassadors' collection
 const addAmbassador = async (data: object) => {
