@@ -24,7 +24,7 @@ const Header: React.FC = () => {
   const [open, setOpen] = useState(false);
   return (
     <header className="bg-dark-teal shadow-md sticky top-0 z-50 relative">
-      <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center bg-dark-teal border-b border-gold/20">
+      <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
         <Link to="/" className="text-2xl font-bold text-white tracking-wider">
           Nidhi<span className="text-gold">Setu</span>
         </Link>

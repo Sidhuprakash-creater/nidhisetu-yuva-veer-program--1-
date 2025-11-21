@@ -2,7 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc, getDocs, query, orderBy, where, limit } from "firebase/firestore";
 import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
- 
+import { getAnalytics, isSupported, Analytics } from "firebase/analytics";
 
 // Your web app's Firebase configuration from your project
 const firebaseConfig = {
@@ -20,10 +20,13 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 const REQUIRED_ADMIN_EMAIL = "nidhisetusaving@gmail.com";
-let analytics: unknown;
-if (typeof window !== 'undefined' && import.meta.env.PROD) {
-  import('firebase/analytics').then(({ getAnalytics }) => {
-    try { analytics = getAnalytics(app); } catch {}
+let analytics: Analytics | undefined = undefined;
+const enableAnalytics = import.meta.env.MODE === 'production';
+if (enableAnalytics) {
+  isSupported().then((supported) => {
+    if (supported) {
+      analytics = getAnalytics(app);
+    }
   }).catch(() => {});
 }
 
@@ -78,4 +81,4 @@ const signOutAdmin = async () => {
 
 const isAdmin = () => auth.currentUser?.email === REQUIRED_ADMIN_EMAIL;
 
-export { db, addAmbassador, getAmbassadors, auth, signInAdmin, signOutAdmin, isAdmin, REQUIRED_ADMIN_EMAIL, checkAmbassadorExists };
+export { db, addAmbassador, getAmbassadors, auth, signInAdmin, signOutAdmin, isAdmin, REQUIRED_ADMIN_EMAIL, checkAmbassadorExists, analytics };

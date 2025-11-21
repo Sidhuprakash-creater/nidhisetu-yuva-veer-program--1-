@@ -173,7 +173,7 @@ const HomePage: React.FC = () => {
           </p>
         </div>
       </section>
-      
+
       {/* Banner Images */}
       <section className="bg-gray-100 py-16">
           <div className="container mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 justify-items-center">
@@ -188,25 +188,54 @@ const HomePage: React.FC = () => {
               </div>
           </div>
       </section>
-
-      {/* Benefits Section */}
-      <section className="py-16 md:py-24">
+      
+      <section className="py-12 md:py-16 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6">
-          <h2 className="text-2xl sm:text-3xl font-bold text-dark-teal text-center">Program Benefits</h2>
-          <div className="w-24 h-1 bg-gold mx-auto mt-4 mb-12"></div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {benefits.map((benefit, index) => (
-              <BenefitCard
-                key={index}
-                icon={benefit.icon}
-                title={benefit.title}
-                description={benefit.description}
-                onClick={() => openModal(index === 1 ? 'networking' : index === 2 ? 'skills' : index === 3 ? 'exclusive' : 'cert')}
-              />
-            ))}
+          <h2 className="text-3xl font-bold text-dark-teal text-center">Upcomming Event</h2>
+          <div className="w-24 h-1 bg-gold mx-auto mt-4 mb-8"></div>
+          <div className="bg-white rounded-2xl shadow-xl border border-blue-100 p-6 md:p-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold text-dark-teal">Expert Talk on Startup & Entrepreneurship</h3>
+                <p className="mt-2 text-gray-600">Learn the real startup mindset in a 60-minute live session.</p>
+                <div className="mt-4 space-y-2 text-sm sm:text-base">
+                  <div className="flex items-center text-dark-teal"><span className="font-semibold mr-2">Speaker:</span> Mr. Utkharsh Singh, Founder & CEO, ZUUCE Solution, Chennai</div>
+                  <div className="flex items-center text-dark-teal"><span className="font-semibold mr-2">Date:</span> Monday, 24th November 2025</div>
+                  <div className="flex items-center text-dark-teal"><span className="font-semibold mr-2">Time:</span> 06:15 PM – 07:15 PM</div>
+                </div>
+                <ul className="mt-4 space-y-2">
+                  <li className="flex items-start"><span className="w-2 h-2 mt-2 mr-3 rounded-full bg-gold"></span>60-minute session + Q&A</li>
+                  <li className="flex items-start"><span className="w-2 h-2 mt-2 mr-3 rounded-full bg-gold"></span>Startup mindset & growth</li>
+                  <li className="flex items-start"><span className="w-2 h-2 mt-2 mr-3 rounded-full bg-gold"></span>Exclusive for NidhiSetu Ambassadors</li>
+                  <li className="flex items-start"><span className="w-2 h-2 mt-2 mr-3 rounded-full bg-gold"></span>Certificate provided</li>
+                </ul>
+                <Link to="/register" className="mt-8 inline-block bg-dark-teal text-white font-bold py-3 px-6 rounded-lg hover:bg-teal-800 shadow-md transition-transform hover:-translate-y-0.5">Reserve Your Spot</Link>
+              </div>
+              <div>
+                <img src="/assets/Screenshot%202025-11-21%20164654.png" alt="Expert Talk Poster" className="w-full h-48 md:h-64 rounded-xl shadow-md ring-1 ring-blue-100 object-contain bg-white p-2" onError={(e) => { (e.currentTarget as HTMLImageElement).src = 'https://picsum.photos/seed/expertposter/800/600'; }} />
+              </div>
+            </div>
+          </div>
+          <div className="mt-12">
+            <div className="text-center">
+              <h2 className="text-2xl sm:text-3xl font-bold text-dark-teal">Program Benefits</h2>
+              <div className="w-24 h-1 bg-gold mx-auto mt-4 mb-12"></div>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              {benefits.map((benefit, index) => (
+                <BenefitCard
+                  key={index}
+                  icon={benefit.icon}
+                  title={benefit.title}
+                  description={benefit.description}
+                  onClick={() => openModal(index === 1 ? 'networking' : index === 2 ? 'skills' : index === 3 ? 'exclusive' : 'cert')}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
+
 
       {/* Ambassador Responsibilities & Rewards */}
       <section className="py-16 md:py-24 bg-white">
