@@ -197,17 +197,13 @@ const HomePage: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
               <div>
                 <h3 className="text-2xl md:text-3xl font-bold text-dark-teal">Expert Talk on Startup & Entrepreneurship - Completed</h3>
-                <p className="mt-2 text-gray-600">A successful session on Startup Mindset & Entrepreneurship was held on 24 Nov 2025 with Mr. Utkharsh Singh.</p>
+                <p className="mt-2 text-gray-600">A successful session on Startup Mindset & Entrepreneurship was held on 24 Nov 2025 with Mr. Utkharsh Singh</p>
                 <div className="mt-4 space-y-2 text-sm sm:text-base">
                   <div className="flex items-center text-dark-teal"><span className="font-semibold mr-2">Speaker:</span> Mr. Utkharsh Singh, Founder & CEO, ZUUCE Solution, Chennai</div>
-                
-                <ul className="mt-4 space-y-2">
-                  <li className="flex items-start"><span className="w-2 h-2 mt-2 mr-3 rounded-full bg-gold"></span>60-minute session + Q&A</li>
-                  <li className="flex items-start"><span className="w-2 h-2 mt-2 mr-3 rounded-full bg-gold"></span>Startup mindset & growth</li>
-                  <li className="flex items-start"><span className="w-2 h-2 mt-2 mr-3 rounded-full bg-gold"></span>Exclusive for NidhiSetu Ambassadors</li>
-                  <li className="flex items-start"><span className="w-2 h-2 mt-2 mr-3 rounded-full bg-gold"></span>Certificate provided</li>
-                </ul>
-
+                 
+                </div>
+               
+                <Link to="/register" className="mt-8 inline-block bg-dark-teal text-white font-bold py-3 px-6 rounded-lg hover:bg-teal-800 shadow-md transition-transform hover:-translate-y-0.5">Reserve Your Spot</Link>
               </div>
               <div>
                 <img src="/assets/Screenshot%202025-11-21%20164654.png" alt="Expert Talk Poster" className="w-full h-48 md:h-64 rounded-xl shadow-md ring-1 ring-blue-100 object-contain bg-white p-2" onError={(e) => { (e.currentTarget as HTMLImageElement).src = 'https://picsum.photos/seed/expertposter/800/600'; }} />
