@@ -203,7 +203,6 @@ const HomePage: React.FC = () => {
                  
                 </div>
                
-                <Link to="/register" className="mt-8 inline-block bg-dark-teal text-white font-bold py-3 px-6 rounded-lg hover:bg-teal-800 shadow-md transition-transform hover:-translate-y-0.5">Reserve Your Spot</Link>
               </div>
               <div>
                 <img src="/assets/Screenshot%202025-11-21%20164654.png" alt="Expert Talk Poster" className="w-full h-48 md:h-64 rounded-xl shadow-md ring-1 ring-blue-100 object-contain bg-white p-2" onError={(e) => { (e.currentTarget as HTMLImageElement).src = 'https://picsum.photos/seed/expertposter/800/600'; }} />
